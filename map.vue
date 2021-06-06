@@ -117,7 +117,7 @@ export default {
     },
     queryLocation({ lng, lat }) {
       // 选定经纬度，查询地址信息并提交事件
-      this.$geocoder.getAddress([lng, lat], (status, result) => {
+      $geocoder.getAddress([lng, lat], (status, result) => {
         if (status === 'complete' && result.info === 'OK') {
           try {
             const { name, address } = result.regeocode.pois[0]
@@ -145,7 +145,7 @@ export default {
       // 在图面添加定位控件，用来获取和展示用户主机所在的经纬度位置
       this.$map.addControl(new AMap.Geolocation())
       // 初始化逆地址解析
-      this.$geocoder = new AMap.Geocoder({ extensions: 'all' })
+      $geocoder = new AMap.Geocoder({ extensions: 'all' })
       // 地图点击事件
       this.$map.on('click', event => {
         const { lng, lat } = event.lnglat

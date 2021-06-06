@@ -1,6 +1,8 @@
 import { AMAP_KEY } from 'src/common/Enum'
 import buildURL from 'axios/lib/helpers/buildURL'
 
+
+
 let loaderPromise = null
 
 function loadPlugin(plugin) {
